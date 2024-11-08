@@ -27,7 +27,7 @@ class OpenGraph
         @body = @src
         @html_content = true
       else
-        @body = RedirectFollower.new(@src, options).resolve.body
+        @body = RedirectFollower.new(@src, options).resolve.body.force_encoding('utf-8')
         @html_content = false
       end
     rescue
